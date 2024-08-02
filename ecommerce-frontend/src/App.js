@@ -1,9 +1,12 @@
 // src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductPage from './components/ProductPage';
-import ProductDetailsPage from './components/ProductDetailsPage';
-import CartPage from './components/CartPage';
+// import ProductPage from './components/ProductPage';
+// import ProductDetailsPage from './components/ProductDetailsPage';
+// import CartPage from './components/CartPage';
+import ProductPage from './pages/ProductPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
+import CartPage from './pages/CartPage';
 import './styles/App.css';
 
 function App() {
