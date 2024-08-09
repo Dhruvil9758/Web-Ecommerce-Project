@@ -1,15 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './ProductCard.css';
+import './ProductCard.css'; // Create a CSS file for styling
 
-const ProductCard = ({ product, addToCart }) => (
-  <div className="product-card">
-    <img src={product.imageUrl} alt={product.name} />
-    <h2>{product.name}</h2>
-    <p>{product.price}</p>
-    <button onClick={() => addToCart(product)}>Add to Cart</button>
-    <Link to={`/product/${product.id}`}>View Details</Link>
-  </div>
-);
+function ProductCard({ product }) {
+  return (
+    <div className="product-card">
+      <img src={product.image} alt={product.name} />
+      <div className="product-info">
+        <h3>{product.name}</h3>
+        <p>{product.description}</p>
+        <p>${product.price.toFixed(2)}</p>
+        <Link to={`/product/${product._id}`} className="view-details">View Details</Link>
+      </div>
+    </div>
+  );
+}
 
 export default ProductCard;
