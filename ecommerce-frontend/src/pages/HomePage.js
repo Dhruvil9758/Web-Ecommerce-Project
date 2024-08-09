@@ -1,29 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProductList from '../components/Product/ProductList';
+import CategoryList from '../components/Category/CategoryList';
+import './Home.css'; // Create a CSS file for styling
 
-const HomePage = ({ addToCart }) => {
-  const products = [
-    { id: 1, name: 'iPhone 11 ', price: '$999' },
-    { id: 2, name: 'iPhone 12 Pro', price: '$1099' },
-    { id: 3, name: 'iPhone 13 Plus', price: '$1099' },
-    { id: 4, name: 'iPhone 14 Pro', price: '$1099' },
-    { id: 5, name: 'iPhone 14 Pro Max', price: '$1099' },
-    // Add more products as needed
-  ];
-
+function Home() {
   return (
-    <div>
-      <h2>Product List</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            <Link to={`/product/${product.id}__ `}>{product.name}  </Link> - {product.price}
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-          </li>
-        ))}
-      </ul>
+    <div className="home-container">
+      <header className="home-header">
+        <h1>Welcome to Our Store</h1>
+        <CategoryList />
+      </header>
+      <section className="featured-products">
+        <h2>Featured Products</h2>
+        <ProductList />
+      </section>
+      <footer className="home-footer">
+        <p>&copy; 2024 Your Company</p>
+      </footer>
     </div>
   );
-};
+}
 
-export default HomePage;
+export default Home;
